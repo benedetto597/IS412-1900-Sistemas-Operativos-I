@@ -16,6 +16,31 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
 }
 
+.Nuevo{
+  background-color: #f8f9fa;
+   color: #212529;
+}
+
+.Listo {
+  background-color: #ffc107 !important;
+  color: #212529 !important;
+}
+
+.Ejecutando {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.Bloqueado {
+  background-color: #dc3545; 
+  color: #fff;
+}
+
+.Finalizado {
+  background-color: #343a40;
+  color: #fff;
+}
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -100,7 +125,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.3s;
 }
 
-#header .profile .social-links a:hover {
+#header a:hover {
   background: #149ddd;
   color: #fff;
   text-decoration: none;

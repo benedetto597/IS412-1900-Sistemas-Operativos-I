@@ -33,15 +33,15 @@
         <h3>Procesos</h3>
       </div>
         <div style="margin: 10px">
-              <input type="number"   aria-label="Proceso" type="text" class="form-control"  aria-describedby="inputGroup-sizing-default" style="margin: 10px" placeholder="Ciclos del Procesador a Usar">
-              <button type="button" class="btn btn-primary btn-lg btn-block btn-sm" style="margin: 10px">Agregar Proceso</button>
-              <button type="button" class="btn btn-primary btn-lg btn-block btn-sm" style="margin: 10px" disabled >Empezar</button>
+              <input type="number" aria-label="Proceso" type="text" class="form-control"  aria-describedby="inputGroup-sizing-default" style="margin: 10px" placeholder="Ciclos del Procesador a Usar">
+              <button id="agregar-proceso" type="button" class="btn btn-primary btn-lg btn-block btn-sm" style="margin: 10px" onclick="AgregarProceso();">Agregar Proceso</button>
+              <button id="empezar-simulacion" type="button" class="btn btn-primary btn-lg btn-block btn-sm" style="margin: 10px" disabled onclick="EmpezarSimulacion();">Empezar</button>
         </div>
 
         <div class="text-muted">
           <h3>Color del Estados</h3>
           <ul >
-            <li ><button type="button" class="btn btn-light " style="margin: 10px" ></button> <span >Nuevo</span></li>
+            <li> <button type="button" class="btn btn-light " style="margin: 10px" ></button> <span >Nuevo</span></li>
             <li> <button type="button" class="btn btn-warning" style="margin: 10px"></button> <span>Listo</span></li>
             <li> <button type="button" class="btn btn-success" style="margin: 10px"></button> <span>Ejecutando</span></li>
             <li> <button type="button" class="btn btn-danger" style="margin: 10px"></button> <span>Bloqueado</span></li>
@@ -60,54 +60,8 @@
         </div>
 
           <div class="container">
-              <div class="row row-cols-4">
-                <div class="col">
-                    <div class="card bg-light mb-3" >
-                    <div class="card-header">Proceso</div>
-                    <div class="card-body">
-                          <li> 1</li>
-                          <li> 1</li>
-                          <li> 1</li>
-                          <li> 1</li>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col">
-                   <div class="card text-white bg-primary mb-3" >
-                      <div class="card-header">Proceso</div>
-                      <div class="card-body">
-                          <li> 1</li>
-                          <li> 1</li>
-                          <li> 1</li>
-                          <li> 1</li>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                   <div class="card text-white bg-warning mb-3" >
-                      <div class="card-header">Proceso</div>
-                      <div class="card-body">
-                         <li> 1</li>
-                          <li> 1</li>
-                          <li> 1</li>
-                          <li> 1</li>
-                         </div>
-                    </div>
-                </div>
-
-                  <div class="col">
-                   <div class="card text-white bg-success mb-3" >
-                      <div class="card-header">Proceso</div>
-                      <div class="card-body">
-                        <li> 1</li>
-                          <li> 1</li>
-                          <li> 1</li>
-                          <li> 1</li>
-                      </div>
-                    </div>     
-                  </div>
+              <div id="procesos-cards" class="row row-cols-4">
+                
               </div>
             </div>
           </div>
@@ -159,6 +113,7 @@
 
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/controlador.js"></script>
 
 </body>
 
