@@ -21,19 +21,23 @@
   <!-- Estilos CSS Personalizados -->
   <link href="css/style.css" rel="stylesheet">
 
+  <!-- Animación para la entradad de las cartas -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
 </head>
 
 <body>
 
   <!-- ======= Header ======= -->
   <header id="header">
-    <div class="d-flex flex-column">
+    <div class="d-flex flex-column animated bounceInLeft">
 
       <div class="text-muted">
         <h3>Procesos</h3>
       </div>
         <div style="margin: 10px">
-              <input type="number" aria-label="Proceso" type="text" class="form-control"  aria-describedby="inputGroup-sizing-default" style="margin: 10px" placeholder="Ciclos del Procesador a Usar">
+              <input type="number" min="1" max="999" class="form-control" style="margin: 10px" placeholder="Ciclos del Procesador a Usar" id="ciclos-usar">
+              <div id="texto-advertencia"></div>
               <button id="agregar-proceso" type="button" class="btn btn-primary btn-lg btn-block btn-sm" style="margin: 10px" onclick="AgregarProceso();">Agregar Proceso</button>
               <button id="empezar-simulacion" type="button" class="btn btn-primary btn-lg btn-block btn-sm" style="margin: 10px" disabled onclick="EmpezarSimulacion();">Empezar</button>
         </div>
@@ -55,11 +59,11 @@
     <!-- ======= Procesos ======= -->
     <section id="Procesos">
       <div class="container">
-        <div class="section-title">
+        <div class="section-title animated bounceInDown">
           <h2>Simulador de Gestor de Procesos</h2>
         </div>
 
-          <div class="container">
+          <div class="container ">
               <div id="procesos-cards" class="row row-cols-4">
                 
               </div>
@@ -69,7 +73,7 @@
   </main><!-- End #main -->
 
    <footer id="footer">
-    <div class="container">
+    <div class="container  animated bounceInLeft">
       <div>
          <strong>UNAH</strong> Sistemas Operativos I <strong>IS-412</strong>
          <br>Ingeniero Julio Cesar Sandoval
@@ -108,8 +112,6 @@
       </div>  
     </div>
   </footer>
-
-
 
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
