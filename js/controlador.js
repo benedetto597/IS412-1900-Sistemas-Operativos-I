@@ -21,9 +21,9 @@ function FinalizarSimulacion(){
 }
 
 function CrearProceso(){
-    //Agregar card con información del proceso
-    document.getElementById('procesos-cards').innerHTML += 
-    `<div id="proceso-${bloquearAgregar + 1}" class="col">
+//Agregar card con información del proceso
+document.getElementById('procesos-cards').innerHTML += 
+`<div id="proceso-${bloquearAgregar + 1}" class="col">
         <div class="card mb-3">
         <div class="card-header">Proceso</div>
         <div class="card-body">
@@ -52,3 +52,4 @@ function ValidarProceso(){
                 document.getElementById('empezar-simulacion').disabled = false;
         }
 }
+
