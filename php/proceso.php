@@ -1,4 +1,6 @@
 <?php 
+
+// -------------------------------- BCP Proceso -------------------------------- //
     class Proceso{
         private $id;
         private $estado;

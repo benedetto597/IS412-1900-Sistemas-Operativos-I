@@ -11,6 +11,7 @@ var Finalizado = new LinkedList();
 document.getElementById('ciclos-usar').value = 0;
 document.getElementById('empezar-simulacion').disabled = true;
 
+//Petición AJAX con la información del proceso 
 function GenerarProceso() {
     let ciclos = {
         ciclosUsar: document.getElementById('ciclos-usar').value
@@ -33,6 +34,7 @@ function GenerarProceso() {
     });
 }
 
+//Validación de input
 function ValidarCiclos() {
     let valor = document.getElementById('ciclos-usar').value;
     if (valor <= 40 || valor > 999) {
@@ -89,6 +91,7 @@ function EmpezarSimulacion() {
     <button type="button" class="btn btn-primary btn-lg btn-block btn-sm" style="margin: 10px" onclick="Simular();">Simular</button>`;
 }
 
+//Pasar procesos de la lista enlazada de Nuevos a Listos
 function AsignarProcesosListos() {
     let proceso = 1;
     current = Nuevo.first;
@@ -111,8 +114,11 @@ function AsignarProcesosListos() {
     document.getElementById(`proceso-${proceso}-estado`).innerHTML = `Listo`;
     document.getElementById(`estado-${proceso}`).innerHTML = `1`;
 }
+
+//Arreglo donde se guardará el id de los procesos que se van ejecutando
 var ejecutados = [];
 
+// --------------------------------- Simulación --------------------------------- //
 function Simular() {
     document.querySelector('#btn-accion button').style.display = 'none';
     let accion = setInterval(frame, 3000);
@@ -169,7 +175,6 @@ function Simular() {
                         ejecutados.push(actual.value.Id);
                         EjecutarProceso(proceso, actual.value.Id);
                     }
-                    //Movimiento del while interno
                     proceso++;
                     actual = actual.next;
                 }
@@ -219,6 +224,7 @@ function Simular() {
     }
 }
 
+//Detectar si un proceso se ha ejecutado 3 veces seguidas y bajarle la prioridad
 function ProcesosEjecutados() {
     if (ejecutados[ejecutados.length - 1] && ejecutados[ejecutados.length - 2] && ejecutados[ejecutados.length - 3]) {
         if (parseInt((ejecutados[ejecutados.length - 1].toString()).substring(0, 1)) == parseInt((ejecutados[ejecutados.length - 2].toString()).substring(0, 1)) == parseInt((ejecutados[ejecutados.length - 3].toString()).substring(0, 1))) {
@@ -229,6 +235,7 @@ function ProcesosEjecutados() {
     return false;
 }
 
+//Simulación de ejecución de proceso
 function EjecutarProceso(proceso, id) {
     var elem = document.getElementById(`myBar-${proceso}`);
     let width = 0;
@@ -260,6 +267,7 @@ function EjecutarProceso(proceso, id) {
 
 }
 
+//Simulación de ejecución y finalización de un proceso
 function FinalizarProceso(proceso, id) {
     var elem = document.getElementById(`myBar-${proceso}`);
     let width = 0;
@@ -291,6 +299,7 @@ function FinalizarProceso(proceso, id) {
 
 }
 
+//Simulación de ejecución y Bloqueo de un proceso
 function BloquearProceso(proceso, id) {
     var elem = document.getElementById(`myBar-${proceso}`);
     let width = 0;
@@ -321,6 +330,7 @@ function BloquearProceso(proceso, id) {
     }
 }
 
+//Simulación de desbloqueo de un proceso
 function DesbloquearProceso(proceso, id) {
     var elem = document.getElementById(`myBar-${proceso}`);
     let width = 0;
@@ -361,7 +371,7 @@ function ProcesoBloqueado(proceso, id) {
 
 }
 
-
+//Borrado del archivo JSON, reinicio de botones y listas enlazadas
 function FinalizarSimulacion() {
     document.getElementById('procesos-cards').innerHTML = ``;
     document.getElementById('agregar-proceso').disabled = false;
@@ -387,6 +397,7 @@ function FinalizarSimulacion() {
     LimpiarListas();
 }
 
+//Borrado de nodos de listas enlazadas
 function LimpiarListas(){
     for(let i = 0; i<Nuevo.length()+1; i++ ){
         Nuevo.delete();
@@ -429,6 +440,7 @@ function LinkedList() {
     this.searchPosition = LinkedListSearch;
 }
 
+// ---------------------- Agregar a la lista enlazada por prioridad ---------------------- //
 function LinkedListAdd(value, newPriority) {
     if (!this.first) {
         this.first = new Node(value, newPriority)

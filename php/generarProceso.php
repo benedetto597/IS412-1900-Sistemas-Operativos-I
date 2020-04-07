@@ -1,10 +1,15 @@
 <?php 
     include('proceso.php');
 
+    //Obtener lo ingresado por el usuario
     $_POST = json_decode(file_get_contents("php://input"),true); 
     $ciclos=$_POST;
     $ciclo = $ciclos['ciclosUsar'];
+
+    //Parsear a entero
     $instrucciones = intval($ciclo);
+
+    //Generar los datos del proceso
     $instruccionDeBloqueo = $instrucciones - (30);
     $prioridad=rand(1,3);
     $opciones=array(0,3,5);
@@ -19,6 +24,7 @@
 
     $tamanioArchivo = '../procesos.json';
 
+    //Escribir en el archivo de texto plano
     if (filesize($tamanioArchivo) > 0){
         $contenidoArchivo = file_get_contents('../procesos.json');
         $procesos = json_decode($contenidoArchivo,true);
@@ -35,6 +41,8 @@
         $guardarProceso[] = $retornarProceso;
         $nuevoProceso->escribirProcesos($guardarProceso);
     }
+
+    //Respuesta del servidor
     echo json_encode($retornarProceso); 
 
-        ?>
+?>
