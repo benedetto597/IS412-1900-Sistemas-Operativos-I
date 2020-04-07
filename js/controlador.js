@@ -370,7 +370,7 @@ function ProcesoBloqueado(proceso, id) {
     }
 
 }
-//
+
 //Borrado del archivo JSON, reinicio de botones y listas enlazadas
 function FinalizarSimulacion() {
     document.getElementById('procesos-cards').innerHTML = ``;
