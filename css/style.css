@@ -3,6 +3,23 @@ body {
   color: #272829;
 }
 
+#myProgress-1, #myProgress-2, #myProgress-3, #myProgress-4, #myProgress-5, #myProgress-6, #myProgress-7, #myProgress-8, #myProgress-9, #myProgress-10{
+  width: 100%;
+  position: relative;
+  background-color: #ddd;
+}
+
+h6{
+  display:inline;
+}
+
+#myBar-1, #myBar-2, #myBar-3, #myBar-4, #myBar-5, #myBar-6, #myBar-7,#myBar-8,#myBar-9,#myBar-10 {
+  background-color: #4CAF50;
+  width: 10px;
+  height: 30px;
+  position: relative;
+}
+
 a {
   color: #149ddd;
 }

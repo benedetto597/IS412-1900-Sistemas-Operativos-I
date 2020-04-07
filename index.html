@@ -36,12 +36,13 @@
         <h3>Procesos</h3>
       </div>
         <div style="margin: 10px">
-          <form action="php/generarProceso.php" method="POST" >
-              <input type="number" min="1" max="999" class="form-control" style="margin: 10px" placeholder="Ciclos del Procesador a Usar" id="ciclos-usar" name="ciclos"> 
-              <div id="texto-advertencia"></div>
-              <button id="agregar-proceso" type="sumbit" class="btn btn-primary btn-lg btn-block btn-sm" style="margin: 10px" onclick="AgregarProceso();">Agregar Proceso</button>
-              <button id="empezar-simulacion" type="button" class="btn btn-primary btn-lg btn-block btn-sm" style="margin: 10px" disabled onclick="EmpezarSimulacion();">Empezar</button>
-          </form>
+        <input type="number" min=40 max=999 class="form-control" style="margin: 10px" placeholder="Ciclos del Procesador a Usar" id="ciclos-usar" name="ciclos"> 
+        <div id="texto-advertencia"></div>
+        <button id="agregar-proceso" type="button" class="btn btn-primary btn-lg btn-block btn-sm" style="margin: 10px" onclick="ValidarCiclos();">Agregar Proceso</button>
+        <div id="btn-accion">
+          <button id="empezar-simulacion" type="button" class="btn btn-primary btn-lg btn-block btn-sm" style="margin: 10px" disabled onclick="EmpezarSimulacion();">Empezar</button>
+        </div>
+        <div id="countdown"></div>
         </div>
 
         <div class="text-muted">
