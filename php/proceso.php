@@ -2,8 +2,8 @@
 
 // -------------------------------- BCP Proceso -------------------------------- //
     class Proceso{
-        private $id;
         private $estado;
+        private $id;
         private $prioridad;
         private $instrucciones;
         private $bloqueo;

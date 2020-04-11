@@ -87,8 +87,8 @@ function EmpezarSimulacion() {
     document.getElementById('agregar-proceso').disabled = true;
     document.getElementById('empezar-simulacion').disabled = true;
     AsignarProcesosListos();
-    document.getElementById('btn-accion').innerHTML = `
-    <button type="button" class="btn btn-primary btn-lg btn-block btn-sm" style="margin: 10px" onclick="Simular();">Simular</button>`;
+    Simular();
+  
 }
 
 //Pasar procesos de la lista enlazada de Nuevos a Listos
