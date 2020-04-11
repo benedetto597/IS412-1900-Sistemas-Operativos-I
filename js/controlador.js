@@ -121,9 +121,9 @@ var ejecutados = [];
 // --------------------------------- Simulación --------------------------------- //
 function Simular() {
     document.querySelector('#btn-accion button').style.display = 'none';
-    let accion = setInterval(frame, 3000);
+    let accion = setInterval(Simulacion, 3000);
 
-    function frame() {
+    function Simulacion() {
         if (Finalizado.length() == bloquearAgregar) {
             document.getElementById('btn-accion').innerHTML = `
             <button type="button" class="btn btn-primary btn-lg btn-block btn-sm" style="margin: 10px" onclick="FinalizarSimulacion();">Finalizar</button>`;
@@ -202,8 +202,6 @@ function Simular() {
 
                     } else if (current.value.Evento == 2) {
                         if (current.value.Id + 5 > current.value.Bloqueo + 27 + (proceso * 1000)) {
-                            for (let i = current.value.Id; i < current.value.Bloqueo + 27 + (proceso * 1000); i++) {}
-
                             Bloqueado.deleteInPosotion(current.value);
                             let nuevoId = (current.value.Bloqueo + 27 + (proceso * 1000)) - (current.value.Id);
                             current.value.Id = current.value.Id + nuevoId;
@@ -239,9 +237,9 @@ function ProcesosEjecutados() {
 function EjecutarProceso(proceso, id) {
     var elem = document.getElementById(`myBar-${proceso}`);
     let width = 0;
-    let accion = setInterval(frame, 20);
+    let accion = setInterval(Ejecutar, 20);
 
-    function frame() {
+    function Ejecutar() {
         if (width == 100) {
             clearInterval(accion);
         } else if (width < 50) {
@@ -271,9 +269,9 @@ function EjecutarProceso(proceso, id) {
 function FinalizarProceso(proceso, id) {
     var elem = document.getElementById(`myBar-${proceso}`);
     let width = 0;
-    let accion = setInterval(frame, 20);
+    let accion = setInterval(Finalizar, 20);
 
-    function frame() {
+    function Finalizar() {
         if (width == 100) {
             clearInterval(accion);
         } else if (width < 50) {
@@ -303,9 +301,9 @@ function FinalizarProceso(proceso, id) {
 function BloquearProceso(proceso, id) {
     var elem = document.getElementById(`myBar-${proceso}`);
     let width = 0;
-    let accion = setInterval(frame, 20);
+    let accion = setInterval(Bloquear, 20);
 
-    function frame() {
+    function Bloquear() {
         if (width == 100) {
             clearInterval(accion);
         } else if (width < 50) {
@@ -334,9 +332,9 @@ function BloquearProceso(proceso, id) {
 function DesbloquearProceso(proceso, id) {
     var elem = document.getElementById(`myBar-${proceso}`);
     let width = 0;
-    let accion = setInterval(frame, 20);
+    let accion = setInterval(Desbloquear, 20);
 
-    function frame() {
+    function Desbloquear() {
         if (width == 100) {
             clearInterval(accion);
         } else if (width < 50) {
