@@ -94,7 +94,7 @@ function EmpezarSimulacion() {
 //Pasar procesos de la lista enlazada de Nuevos a Listos
 function AsignarProcesosListos() {
     let proceso = 1;
-    current = Nuevo.first;
+    let current = Nuevo.first;
 
     while (current.next) {
         document.getElementById(`proceso-${proceso}`).classList.remove('bg-white');
