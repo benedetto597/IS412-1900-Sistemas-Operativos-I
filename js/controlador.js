@@ -429,13 +429,9 @@ function Node(value, priority) {
 function LinkedList() {
     this.first = null;
     this.add = LinkedListAdd;
-    this.print = LinkedListPrint;
-    this.getLast = LinkedListGetLast;
-    this.getFirst = LinkedListGetFirst;
     this.delete = LinkedListDelete;
     this.length = LinkedListLenght;
     this.deleteInPosotion = LinkedListDeleteInPosition;
-    this.searchPosition = LinkedListSearch;
 }
 
 // ---------------------- Agregar a la lista enlazada por prioridad ---------------------- //
@@ -511,27 +507,6 @@ function LinkedListDeleteInPosition(value) {
 
 }
 
-function LinkedListPrint() {
-    let current = this.first;
-    while (current.next) {
-        console.log(current.value);
-        current = current.next;
-    }
-    console.log(current.value);
-}
-
-function LinkedListGetFirst() {
-    return this.first;
-}
-
-function LinkedListGetLast() {
-    let last = this.first;
-    while (last.next) {
-        last = last.next;
-    }
-    return last;
-}
-
 function LinkedListLenght() {
     count = 0;
     current = this.first;
@@ -540,16 +515,4 @@ function LinkedListLenght() {
         current = current.next;
     }
     return count;
-}
-
-function LinkedListSearch(value) {
-    count = 0;
-    current = this.first;
-    while (current.next) {
-        if (current.value == value) {
-            return count;
-        }
-        count++;
-        current = current.next;
-    }
 }
