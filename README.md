@@ -20,6 +20,8 @@ _____
 * Basado en el **modelo de 5 estados** desarrollar un gestor que planifique y ejecute procesos que 
 estará representado por la siguiente codificación:
 
+<br>
+
 |Espacios| Información Contenida | Observación |
 |:------:|:---------------------:|:-----------:|
 |4| Id del proceso| |
@@ -71,3 +73,22 @@ ______
 ### Manual de usuario (valor 2 puntos)
 
 _______
+
+### Mockups
+
+* Portada del proyecto 
+* Input de los ciclos del procesador
+
+![Mockup Input](https://drive.google.com/uc?export=view&id=1hfhZ09lGavX9V2cwP6rVPAiXHUBfaxrv)
+
+* Procesos inactivos
+
+![Mockup Output 1](https://drive.google.com/uc?export=view&id=1KhVzW2iYAt0zj2wtMKCOCGtDRJNkxqnN)
+
+* Procesos activos
+
+![Mockup Output 2](https://drive.google.com/uc?export=view&id=1UvViDuQXe2wfFqAwTLlI_OrWo3QCjRSy)
+
+### Enlaces
+
+[Video Explicativo](https://drive.google.com/file/d/1NFPWSazf14hiZbuWL0rKMNQefAU4JsUp/view?usp=sharing)
